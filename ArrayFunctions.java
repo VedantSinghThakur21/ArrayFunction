@@ -1,5 +1,6 @@
 import java.util.*;
 
+
 class ArrayFunctions {
     public void display(ArrayList<Integer> array) {
         System.out.println("Array is: " + array);
@@ -20,4 +21,17 @@ class ArrayFunctions {
         display(odd);
         display(even);
     }
+
+	public int findSmallestDistance(int[] array){
+		int minDistance = Math.abs(array[1]-array[0]);
+		int index = 0;
+		for(int i = 1 ; i < array.length -1; i++){
+			int distance = Math.abs(array[i]-array[i+1]);
+			if(distance<minDistance){
+				minDistance = distance;
+				index = i;
+			}
+		}
+		return index;
+	}
 }
